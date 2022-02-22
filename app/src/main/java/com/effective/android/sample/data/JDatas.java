@@ -1,18 +1,62 @@
 package com.effective.android.sample.data;
 
+import static com.effective.android.anchors.AnchorsManager.getInstance;
+import static com.effective.android.sample.data.Datas.PROJECT_1;
+import static com.effective.android.sample.data.Datas.PROJECT_2;
+import static com.effective.android.sample.data.Datas.PROJECT_3;
+import static com.effective.android.sample.data.Datas.PROJECT_4;
+import static com.effective.android.sample.data.Datas.PROJECT_5;
+import static com.effective.android.sample.data.Datas.PROJECT_6;
+import static com.effective.android.sample.data.Datas.PROJECT_7;
+import static com.effective.android.sample.data.Datas.PROJECT_8;
+import static com.effective.android.sample.data.Datas.PROJECT_9;
+import static com.effective.android.sample.data.Datas.TASK_10;
+import static com.effective.android.sample.data.Datas.TASK_11;
+import static com.effective.android.sample.data.Datas.TASK_12;
+import static com.effective.android.sample.data.Datas.TASK_13;
+import static com.effective.android.sample.data.Datas.TASK_20;
+import static com.effective.android.sample.data.Datas.TASK_21;
+import static com.effective.android.sample.data.Datas.TASK_22;
+import static com.effective.android.sample.data.Datas.TASK_23;
+import static com.effective.android.sample.data.Datas.TASK_30;
+import static com.effective.android.sample.data.Datas.TASK_31;
+import static com.effective.android.sample.data.Datas.TASK_32;
+import static com.effective.android.sample.data.Datas.TASK_33;
+import static com.effective.android.sample.data.Datas.TASK_40;
+import static com.effective.android.sample.data.Datas.TASK_41;
+import static com.effective.android.sample.data.Datas.TASK_42;
+import static com.effective.android.sample.data.Datas.TASK_43;
+import static com.effective.android.sample.data.Datas.TASK_50;
+import static com.effective.android.sample.data.Datas.TASK_51;
+import static com.effective.android.sample.data.Datas.TASK_52;
+import static com.effective.android.sample.data.Datas.TASK_53;
+import static com.effective.android.sample.data.Datas.TASK_60;
+import static com.effective.android.sample.data.Datas.TASK_61;
+import static com.effective.android.sample.data.Datas.TASK_62;
+import static com.effective.android.sample.data.Datas.TASK_63;
+import static com.effective.android.sample.data.Datas.TASK_70;
+import static com.effective.android.sample.data.Datas.TASK_71;
+import static com.effective.android.sample.data.Datas.TASK_72;
+import static com.effective.android.sample.data.Datas.TASK_73;
+import static com.effective.android.sample.data.Datas.TASK_80;
+import static com.effective.android.sample.data.Datas.TASK_81;
+import static com.effective.android.sample.data.Datas.TASK_82;
+import static com.effective.android.sample.data.Datas.TASK_83;
+import static com.effective.android.sample.data.Datas.TASK_90;
+import static com.effective.android.sample.data.Datas.TASK_91;
+import static com.effective.android.sample.data.Datas.TASK_92;
+import static com.effective.android.sample.data.Datas.TASK_93;
+
 import com.effective.android.anchors.AnchorsManager;
-import com.effective.android.anchors.task.lock.LockableAnchor;
-import com.effective.android.anchors.task.project.Project;
 import com.effective.android.anchors.task.Task;
 import com.effective.android.anchors.task.listener.TaskListener;
+import com.effective.android.anchors.task.lock.LockableAnchor;
+import com.effective.android.anchors.task.project.Project;
 
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static com.effective.android.anchors.AnchorsManager.getInstance;
-import static com.effective.android.sample.data.Datas.*;
 
 public class JDatas {
     /**
@@ -33,22 +77,22 @@ public class JDatas {
      * 2019-12-11 14:05:44.852 32459-32459/com.effective.android.sample D/DEPENDENCE_DETAIL: UITHREAD_TASK_A --> PROJECT_1_start(1576044344835) --> TASK_10 --> TASK_11 --> TASK_12 --> TASK_13 --> PROJECT_1_end(1576044344835)
      * 2019-12-11 14:05:44.853 32459-32459/com.effective.android.sample D/DEPENDENCE_DETAIL: UITHREAD_TASK_A --> UITHREAD_TASK_B
      * 2019-12-11 14:05:44.853 32459-32459/com.effective.android.sample D/DEPENDENCE_DETAIL: UITHREAD_TASK_A --> UITHREAD_TASK_C
-     *
-     *
-     *
-     *
+     * <p>
+     * <p>
+     * <p>
+     * <p>
      * 设置了一下anchor
      * 2019-12-11 14:05:44.853 32459-32459/com.effective.android.sample D/ANCHOR_DETAIL: has some anchors！( "TASK_10" "TASK_93" )
-     *
-     *
+     * <p>
+     * <p>
      * 校验log：当且仅当anchor执行完毕，解除阻塞
      * 2019-12-11 14:05:44.805 32459-32459/com.effective.android.sample D/SampleApplication: onCreate - start
-     *
-     *
+     * <p>
+     * <p>
      * （TASK_10 完成）
      * （TASK_93 完成）
-     *
-     *
+     * <p>
+     * <p>
      * 2019-12-11 14:05:46.086 32459-32459/com.effective.android.sample D/ANCHOR_DETAIL: All anchors were released！
      * 2019-12-11 14:05:46.087 32459-32459/com.effective.android.sample D/SampleApplication: onCreate - end
      */
@@ -96,7 +140,7 @@ public class JDatas {
         builder7.add(TASK_72).dependOn(TASK_70);
         builder7.add(TASK_73).dependOn(TASK_72);
         Project project7 = builder7.build();
-        Project.Builder builder8 =new Project.Builder(PROJECT_8, testTaskFactory);
+        Project.Builder builder8 = new Project.Builder(PROJECT_8, testTaskFactory);
         builder8.add(TASK_80);
         builder8.add(TASK_81).dependOn(TASK_80);
         builder8.add(TASK_82).dependOn(TASK_80);
@@ -162,9 +206,9 @@ public class JDatas {
     }
 
 
-    public List<LockableAnchor> startForTestLockableAnchor(){
+    public List<LockableAnchor> startForTestLockableAnchor() {
         TestTaskFactory testTaskFactory = new TestTaskFactory();
-        Project.Builder  builder1 = new Project.Builder(PROJECT_1, testTaskFactory);
+        Project.Builder builder1 = new Project.Builder(PROJECT_1, testTaskFactory);
         builder1.add(TASK_10);
         builder1.add(TASK_11).dependOn(TASK_10);
         builder1.add(TASK_12).dependOn(TASK_11);
@@ -203,7 +247,7 @@ public class JDatas {
 
             @Override
             public void onFinish(@NotNull Task task) {
-                if(runnable != null){
+                if (runnable != null) {
                     runnable.run();
                 }
             }
@@ -213,7 +257,7 @@ public class JDatas {
 
             }
         });
-        Project.Builder builder= new Project.Builder(PROJECT_9, factory);
+        Project.Builder builder = new Project.Builder(PROJECT_9, factory);
         builder.add(TASK_10);
         builder.add(TASK_11).dependOn(TASK_10);
         builder.add(TASK_12).dependOn(TASK_11);
@@ -228,7 +272,7 @@ public class JDatas {
 
     public void startForLinkTwoByDsl() {
         TestTaskFactory factory = new TestTaskFactory();
-        Project.Builder builder= new Project.Builder(PROJECT_9, factory);
+        Project.Builder builder = new Project.Builder(PROJECT_9, factory);
         builder.add(TASK_20);
         builder.add(TASK_21).dependOn(TASK_20);
         builder.add(TASK_22).dependOn(TASK_21);

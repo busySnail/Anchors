@@ -24,24 +24,33 @@ class SampleApplication : Application() {
     }
 
     private fun initDependenciesCompatMultiProcess() {
-        val processName = ProcessUtils.processName?: return
+        val processName = ProcessUtils.processName ?: return
 
         //主进程 com.effective.android.sample
         when {
-            processName  == packageName -> {
-                Log.d(TAG, "SampleApplication#initDependenciesCompatMutilProcess - startFromApplicationOnMainProcess")
+            processName == packageName -> {
+                Log.d(
+                    TAG,
+                    "SampleApplication#initDependenciesCompatMutilProcess - startFromApplicationOnMainProcess"
+                )
                 Datas().startFromApplicationOnMainProcessByDsl()
 
                 //私有进程 com.effective.android.sample:remote
             }
             processName.startsWith(packageName) -> {
-                Log.d(TAG, "SampleApplication#initDependenciesCompatMutilProcess - startFromApplicationOnPrivateProcess")
+                Log.d(
+                    TAG,
+                    "SampleApplication#initDependenciesCompatMutilProcess - startFromApplicationOnPrivateProcess"
+                )
                 Datas().startFromApplicationOnPrivateProcess()
 
                 //公有进程 .public
             }
             else -> {
-                Log.d(TAG, "SampleApplication#initDependenciesCompatMutilProcess - startFromApplicationOnPublicProcess")
+                Log.d(
+                    TAG,
+                    "SampleApplication#initDependenciesCompatMutilProcess - startFromApplicationOnPublicProcess"
+                )
                 Datas().startFromApplicationOnPublicProcess()
             }
         }

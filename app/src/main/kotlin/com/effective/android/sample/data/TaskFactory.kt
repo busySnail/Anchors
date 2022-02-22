@@ -1,13 +1,12 @@
 package com.effective.android.sample.data
 
-import com.effective.android.anchors.task.project.Project.TaskFactory
 import com.effective.android.anchors.task.Task
 import com.effective.android.anchors.task.TaskCreator
+import com.effective.android.anchors.task.project.Project.TaskFactory
 import java.util.*
 
 abstract class TestTask(
-    id: String,
-    isAsyncTask: Boolean = false //是否是异步存在
+    id: String, isAsyncTask: Boolean = false //是否是异步存在
 ) : Task(id, isAsyncTask) {
 
     fun doIo(millis: Long) {

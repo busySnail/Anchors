@@ -16,8 +16,7 @@ object ProcessUtils {
         get() = try {
             val file = File("/proc/" + Process.myPid() + "/" + "cmdline")
             val mBufferedReader = BufferedReader(FileReader(file))
-            val processName = mBufferedReader.readLine()
-                    .trim { it <= ' ' }
+            val processName = mBufferedReader.readLine().trim { it <= ' ' }
             mBufferedReader.close()
             processName
         } catch (e: Exception) {
